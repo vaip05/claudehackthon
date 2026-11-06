@@ -34,6 +34,10 @@ export function getLogs(): DayLog[] {
   return read<DayLog[]>(KEYS.logs, []);
 }
 
+export function setLogs(logs: DayLog[]) {
+  write(KEYS.logs, [...logs].sort((a, b) => a.date.localeCompare(b.date)));
+}
+
 export function saveLog(log: DayLog) {
   const logs = getLogs().filter((l) => l.date !== log.date);
   logs.push(log);
