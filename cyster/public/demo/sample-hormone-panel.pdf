@@ -1,0 +1,115 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 5 0 R /F2 6 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 4086 >>
+stream
+q 0.9 g BT /F2 50 Tf 0.819 0.574 -0.574 0.819 85 200 Tm (SAMPLE - NOT REAL) Tj ET Q
+BT /F2 20 Tf 0.35 0.2 0.55 rg 50 735 Td (Example Diagnostics Laboratory) Tj ET
+BT /F1 10 Tf 0.45 g 50 718 Td (Hormone & Metabolic Panel  |  FICTIONAL REPORT FOR SOFTWARE DEMO) Tj ET
+0.35 0.2 0.55 RG 1.2 w 50 708 m 562 708 l S
+BT /F2 10 Tf 0.1 g 50 686 Td (Patient:) Tj ET
+BT /F1 10 Tf 0.1 g 100 686 Td (Jane Sample \(fictional\)) Tj ET
+BT /F2 10 Tf 0.1 g 50 670 Td (Age / Sex:) Tj ET
+BT /F1 10 Tf 0.1 g 110 670 Td (27 / F) Tj ET
+BT /F2 10 Tf 0.1 g 330 686 Td (Collected:) Tj ET
+BT /F1 10 Tf 0.1 g 390 686 Td (2026-10-14 \(cycle day 4\)) Tj ET
+BT /F2 10 Tf 0.1 g 330 670 Td (Reported:) Tj ET
+BT /F1 10 Tf 0.1 g 390 670 Td (2026-10-15) Tj ET
+0.93 0.9 0.96 rg 50 626 512 20 re f
+BT /F2 9 Tf 0.25 g 54 632 Td (TEST) Tj ET
+BT /F2 9 Tf 0.25 g 266 632 Td (RESULT) Tj ET
+BT /F2 9 Tf 0.25 g 336 632 Td (UNITS) Tj ET
+BT /F2 9 Tf 0.25 g 406 632 Td (REFERENCE RANGE) Tj ET
+BT /F2 9 Tf 0.25 g 510 632 Td (FLAG) Tj ET
+BT /F2 10.5 Tf 0.1 g 54 606 Td (Testosterone, total) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 266 606 Td (92) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 606 Td (ng/dL) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 606 Td (15 - 70) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 510 606 Td (HIGH) Tj ET
+0.85 G 0.5 w 50 598 m 562 598 l S
+BT /F1 10.5 Tf 0.1 g 54 580 Td (SHBG) Tj ET
+BT /F1 10.5 Tf 0.1 g 266 580 Td (24) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 580 Td (nmol/L) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 580 Td (18 - 144) Tj ET
+0.85 G 0.5 w 50 572 m 562 572 l S
+BT /F1 10.5 Tf 0.1 g 54 554 Td (DHEA-S) Tj ET
+BT /F1 10.5 Tf 0.1 g 266 554 Td (310) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 554 Td (ug/dL) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 554 Td (35 - 430) Tj ET
+0.85 G 0.5 w 50 546 m 562 546 l S
+BT /F2 10.5 Tf 0.1 g 54 528 Td (Anti-Mullerian hormone \(AMH\)) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 266 528 Td (7.8) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 528 Td (ng/mL) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 528 Td (1.0 - 4.0) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 510 528 Td (HIGH) Tj ET
+0.85 G 0.5 w 50 520 m 562 520 l S
+BT /F2 10.5 Tf 0.1 g 54 502 Td (LH) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 266 502 Td (15.6) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 502 Td (IU/L) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 502 Td (1.9 - 12.5) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 510 502 Td (HIGH) Tj ET
+0.85 G 0.5 w 50 494 m 562 494 l S
+BT /F1 10.5 Tf 0.1 g 54 476 Td (FSH) Tj ET
+BT /F1 10.5 Tf 0.1 g 266 476 Td (5.2) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 476 Td (IU/L) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 476 Td (3.5 - 12.5) Tj ET
+0.85 G 0.5 w 50 468 m 562 468 l S
+BT /F2 10.5 Tf 0.1 g 54 450 Td (LH:FSH ratio \(calculated\)) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 266 450 Td (3.0 : 1) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 450 Td () Tj ET
+BT /F1 10.5 Tf 0.3 g 406 450 Td (below 2 : 1) Tj ET
+BT /F2 10.5 Tf 0.78 0.1 0.15 rg 510 450 Td (HIGH) Tj ET
+0.85 G 0.5 w 50 442 m 562 442 l S
+BT /F1 10.5 Tf 0.1 g 54 424 Td (TSH) Tj ET
+BT /F1 10.5 Tf 0.1 g 266 424 Td (2.1) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 424 Td (mIU/L) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 424 Td (0.4 - 4.0) Tj ET
+0.85 G 0.5 w 50 416 m 562 416 l S
+BT /F1 10.5 Tf 0.1 g 54 398 Td (Prolactin) Tj ET
+BT /F1 10.5 Tf 0.1 g 266 398 Td (11) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 398 Td (ng/mL) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 398 Td (4 - 25) Tj ET
+0.85 G 0.5 w 50 390 m 562 390 l S
+BT /F1 10.5 Tf 0.1 g 54 372 Td (Glucose, fasting) Tj ET
+BT /F1 10.5 Tf 0.1 g 266 372 Td (91) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 372 Td (mg/dL) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 372 Td (70 - 99) Tj ET
+0.85 G 0.5 w 50 364 m 562 364 l S
+BT /F1 10.5 Tf 0.1 g 54 346 Td (Insulin, fasting) Tj ET
+BT /F1 10.5 Tf 0.1 g 266 346 Td (13) Tj ET
+BT /F1 10.5 Tf 0.3 g 336 346 Td (uIU/mL) Tj ET
+BT /F1 10.5 Tf 0.3 g 406 346 Td (2 - 19) Tj ET
+0.85 G 0.5 w 50 338 m 562 338 l S
+BT /F1 9 Tf 0.45 g 50 314 Td (Reference ranges are for early follicular phase \(cycle days 2-5\). Ranges vary by laboratory.) Tj ET
+BT /F2 9 Tf 0.78 0.1 0.15 rg 50 62 Td (FICTIONAL DATA created for a software demonstration. Not a real patient, laboratory, or medical report.) Tj ET
+BT /F1 9 Tf 0.45 g 50 48 Td (Do not use for any medical purpose.) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000251 00000 n 
+0000004388 00000 n 
+0000004485 00000 n 
+trailer
+<< /Size 7 /Root 1 0 R >>
+startxref
+4587
+%%EOF
