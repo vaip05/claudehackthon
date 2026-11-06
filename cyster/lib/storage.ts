@@ -8,6 +8,7 @@ const KEYS = {
   logs: 'cyster.logs',
   focus: 'cyster.focus',
   chat: 'cyster.chat',
+  seenBanner: 'cyster.seenBanner',
 } as const;
 
 /** Fired on `window` after wipeAll() so mounted components can reset their in-memory state. */
@@ -59,6 +60,15 @@ export function getFocus(): Focus {
 
 export function setFocus(focus: Focus) {
   write(scoped(KEYS.focus), focus);
+}
+
+/** First-visit privacy banner. A `cyster.*` key, so wipeAll() clears it. */
+export function hasSeenBanner(): boolean {
+  return read<boolean>(KEYS.seenBanner, false) === true;
+}
+
+export function markBannerSeen() {
+  write(KEYS.seenBanner, true);
 }
 
 /** Persisted chat thread. Attachment bytes are never stored, only their names. */

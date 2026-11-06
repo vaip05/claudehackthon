@@ -550,7 +550,7 @@ export default function Talk() {
               </button>
             </div>
             <p className="mt-2 flex items-center justify-center gap-1 text-[11px] text-zinc-500">
-              <LockIcon className="h-3 w-3" /> Only this chat is sent to the AI. Not a diagnosis. It can make mistakes.
+              <LockIcon className="h-3 w-3" /> Your messages, files and a short cycle summary are sent to the AI. Not a diagnosis. It can make mistakes.
             </p>
           </div>
         </div>
