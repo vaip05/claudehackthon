@@ -1,28 +1,18 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Cyster palette: rose and lavender on off-white */
+@theme {
+  --color-cream: #fbf8f5;
+  --color-ink: #3b2f3a;
+  --color-rose-soft: #f6dde0;
+  --color-rose-deep: #c4607a;
+  --color-lavender-soft: #ebe5f7;
+  --color-lavender-deep: #7b6aa8;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Printing: only the doctor brief panel should come out on paper. */
