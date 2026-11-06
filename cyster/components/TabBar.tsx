@@ -24,7 +24,7 @@ export default function TabBar() {
                 href={tab.href}
                 aria-current={active ? 'page' : undefined}
                 className={`block py-3 text-center text-sm ${
-                  active ? 'font-semibold text-rose-deep' : 'text-ink/60'
+                  active ? 'font-semibold text-rose-deep' : 'text-ink/70'
                 }`}
               >
                 {tab.label}

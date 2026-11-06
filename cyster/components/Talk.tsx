@@ -127,7 +127,7 @@ function SparkleIcon({ className }: IconProps) {
 
 function FileChip({ name, onRemove }: { name: string; onRemove?: () => void }) {
   return (
-    <span className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-violet-200 bg-white px-3 py-1 text-xs text-violet-900">
+    <span className="inline-flex max-w-full items-center gap-1.5 rounded-full border border-lavender-soft bg-white px-3 py-1 text-xs text-lavender-deep">
       <DocIcon className="h-3.5 w-3.5 shrink-0" />
       <span className="truncate">{name}</span>
       {onRemove && (
@@ -135,7 +135,7 @@ function FileChip({ name, onRemove }: { name: string; onRemove?: () => void }) {
           type="button"
           onClick={onRemove}
           aria-label={`Remove ${name}`}
-          className="ml-1 text-violet-400 hover:text-violet-700"
+          className="ml-1 text-lavender-deep hover:text-lavender-deep"
         >
           ✕
         </button>
@@ -366,22 +366,22 @@ export default function Talk() {
   return (
     <>
       {/* Chat UI: hidden when printing so only the doctor brief panel is printed. */}
-      <div className="no-print relative flex flex-1 flex-col overflow-x-clip bg-linear-to-b from-rose-50 via-fuchsia-50 to-violet-50 text-zinc-900">
+      <div className="no-print relative flex flex-1 flex-col overflow-x-clip bg-linear-to-b from-rose-soft via-lavender-soft to-lavender-soft text-ink">
         {/* soft background glow */}
         <div
           aria-hidden
-          className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-rose-200/40 blur-3xl"
+          className="pointer-events-none absolute -left-24 top-24 h-72 w-72 rounded-full bg-rose-soft/40 blur-3xl"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-24 top-1/2 h-80 w-80 rounded-full bg-violet-200/40 blur-3xl"
+          className="pointer-events-none absolute -right-24 top-1/2 h-80 w-80 rounded-full bg-lavender-soft/40 blur-3xl"
         />
 
         <header className="sticky top-[var(--header-h,0px)] z-10 border-b border-white/70 bg-white/60 backdrop-blur-md">
           <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 px-4 pt-3">
             <div>
-              <h1 className="font-serif text-2xl leading-tight text-rose-900">Talk it through</h1>
-              <p className="mt-0.5 flex items-center gap-1 text-xs text-violet-700">
+              <h1 className="font-serif text-2xl leading-tight text-rose-deep">Talk it through</h1>
+              <p className="mt-0.5 flex items-center gap-1 text-xs text-lavender-deep">
                 <LockIcon className="h-3 w-3" /> Private, anonymous, no judgment
               </p>
             </div>
@@ -389,7 +389,7 @@ export default function Talk() {
               type="button"
               onClick={makeBrief}
               disabled={streaming || brief.loading}
-              className="flex shrink-0 items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-sm font-medium text-rose-700 shadow-sm ring-1 ring-rose-200 transition hover:bg-rose-50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex shrink-0 items-center gap-1.5 rounded-full bg-white px-3.5 py-2 text-sm font-medium text-rose-deep shadow-sm ring-1 ring-rose-soft transition hover:bg-rose-soft disabled:cursor-not-allowed disabled:opacity-50"
             >
               <DocIcon className="h-4 w-4" /> Doctor brief
             </button>
@@ -400,18 +400,18 @@ export default function Talk() {
               role="switch"
               aria-checked={mode === 'after'}
               onClick={toggleMode}
-              className="flex w-full items-center gap-3 rounded-2xl bg-white/70 px-3 py-2 text-left ring-1 ring-violet-100 transition hover:bg-white"
+              className="flex w-full items-center gap-3 rounded-2xl bg-white/70 px-3 py-2 text-left ring-1 ring-lavender-soft transition hover:bg-white"
             >
               <span
-                className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${mode === 'after' ? 'bg-violet-500' : 'bg-zinc-300'}`}
+                className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${mode === 'after' ? 'bg-lavender-deep' : 'bg-ink/20'}`}
               >
                 <span
                   className={`absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white shadow transition-transform ${mode === 'after' ? 'translate-x-5' : ''}`}
                 />
               </span>
               <span>
-                <span className="block text-sm font-medium text-violet-900">I&apos;ve seen a doctor</span>
-                <span className="block text-xs text-violet-800/70">
+                <span className="block text-sm font-medium text-lavender-deep">I&apos;ve seen a doctor</span>
+                <span className="block text-xs text-lavender-deep/70">
                   {mode === 'after'
                     ? "Companion mode: I'll help you understand your results and plan follow-ups."
                     : "Turn this on after a visit and I'll help you make sense of what you were told."}
@@ -424,15 +424,15 @@ export default function Talk() {
         <main className="relative mx-auto flex w-full max-w-2xl flex-1 flex-col gap-4 px-4 py-6" aria-live="polite">
           {hydrated && messages.length === 0 && (
             <div className="msg-in flex flex-col items-center px-2 pt-4 text-center">
-              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-rose-300 to-violet-300 text-white shadow-lg shadow-rose-200">
+              <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-rose-deep to-lavender-deep text-white shadow-lg shadow-rose-soft">
                 <SparkleIcon className="h-8 w-8" />
               </div>
-              <h2 className="font-serif text-3xl text-rose-900">Hi, I&apos;m glad you&apos;re here.</h2>
-              <p className="mt-3 max-w-md text-[15px] leading-relaxed text-zinc-600">
+              <h2 className="font-serif text-3xl text-rose-deep">Hi, I&apos;m glad you&apos;re here.</h2>
+              <p className="mt-3 max-w-md text-[15px] leading-relaxed text-ink/70">
                 This is a private space, and nothing is too small or awkward to say. Tell me what&apos;s been going on
                 in your own words. I&apos;ll ask one question at a time and tell you why I&apos;m asking.
               </p>
-              <p className="mt-7 text-xs font-medium uppercase tracking-wider text-violet-700">
+              <p className="mt-7 text-xs font-medium uppercase tracking-wider text-lavender-deep">
                 Not sure where to start?
               </p>
               <div className="mt-3 flex flex-wrap justify-center gap-2">
@@ -441,13 +441,13 @@ export default function Talk() {
                     key={prompt}
                     type="button"
                     onClick={() => void send(prompt)}
-                    className="rounded-full bg-white/80 px-4 py-2 text-sm text-rose-900 shadow-sm ring-1 ring-rose-100 transition hover:-translate-y-0.5 hover:bg-white hover:ring-rose-300"
+                    className="rounded-full bg-white/80 px-4 py-2 text-sm text-rose-deep shadow-sm ring-1 ring-rose-soft transition hover:-translate-y-0.5 hover:bg-white hover:ring-rose-deep"
                   >
                     {prompt}
                   </button>
                 ))}
               </div>
-              <p className="mt-6 flex items-center gap-1.5 text-xs text-zinc-500">
+              <p className="mt-6 flex items-center gap-1.5 text-xs text-ink/70">
                 <ClipIcon className="h-3.5 w-3.5" /> You can also attach a lab report or ultrasound (PDF, JPG or PNG).
               </p>
             </div>
@@ -456,17 +456,17 @@ export default function Talk() {
           {messages.map((m) => (
             <div key={m.id} className={`msg-in flex items-start gap-2.5 ${m.role === 'user' ? 'justify-end' : ''}`}>
               {m.role === 'assistant' && (
-                <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-rose-300 to-violet-300 text-white shadow-sm">
+                <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-rose-deep to-lavender-deep text-white shadow-sm">
                   <SparkleIcon className="h-4 w-4" />
                 </div>
               )}
               <div
                 className={`max-w-[85%] px-4 py-3 text-base leading-relaxed ${
                   m.role === 'user'
-                    ? 'rounded-3xl rounded-tr-md bg-linear-to-br from-violet-100 to-rose-100 text-violet-950 shadow-sm'
+                    ? 'rounded-3xl rounded-tr-md bg-linear-to-br from-lavender-soft to-rose-soft text-lavender-deep shadow-sm'
                     : m.error
-                      ? 'rounded-3xl rounded-tl-md bg-rose-50 text-rose-900 ring-1 ring-rose-200'
-                      : 'rounded-3xl rounded-tl-md bg-white/90 text-zinc-800 shadow-sm shadow-rose-100/60 ring-1 ring-rose-100'
+                      ? 'rounded-3xl rounded-tl-md bg-rose-soft text-rose-deep ring-1 ring-rose-soft'
+                      : 'rounded-3xl rounded-tl-md bg-white/90 text-ink shadow-sm shadow-rose-soft/60 ring-1 ring-rose-soft'
                 }`}
               >
                 {m.attachments && m.attachments.length > 0 && (
@@ -481,9 +481,9 @@ export default function Talk() {
                     <Markdown text={m.content} />
                   ) : (
                     <span className="inline-flex items-center gap-1.5 py-1.5" aria-label="Thinking">
-                      <span className="h-2 w-2 animate-bounce rounded-full bg-rose-300" />
-                      <span className="h-2 w-2 animate-bounce rounded-full bg-fuchsia-300 [animation-delay:150ms]" />
-                      <span className="h-2 w-2 animate-bounce rounded-full bg-violet-300 [animation-delay:300ms]" />
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-rose-deep" />
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-lavender-deep [animation-delay:150ms]" />
+                      <span className="h-2 w-2 animate-bounce rounded-full bg-lavender-deep [animation-delay:300ms]" />
                     </span>
                   )
                 ) : (
@@ -496,7 +496,7 @@ export default function Talk() {
         </main>
 
         {/* Set --tabbar-h on a parent (e.g. the nav height) to lift the composer above a fixed tab bar. */}
-        <div className="sticky bottom-[var(--tabbar-h,0px)] z-10 bg-linear-to-t from-violet-50 via-violet-50 to-violet-50/0 px-4 pb-4 pt-8">
+        <div className="sticky bottom-[var(--tabbar-h,0px)] z-10 bg-linear-to-t from-lavender-soft via-lavender-soft to-lavender-soft/0 px-4 pb-4 pt-8">
           <div className="mx-auto max-w-2xl">
             {(pending.length > 0 || fileError) && (
               <div className="mb-2 space-y-1.5 px-1">
@@ -512,20 +512,20 @@ export default function Talk() {
                   </div>
                 )}
                 {fileError && (
-                  <p role="alert" className="text-xs text-rose-700">
+                  <p role="alert" className="text-xs text-rose-deep">
                     {fileError}
                   </p>
                 )}
               </div>
             )}
-            <div className="flex items-end gap-1 rounded-3xl bg-white p-2 shadow-lg shadow-rose-200/40 ring-1 ring-rose-100 transition focus-within:ring-2 focus-within:ring-rose-300">
+            <div className="flex items-end gap-1 rounded-3xl bg-white p-2 shadow-lg shadow-rose-soft/40 ring-1 ring-rose-soft transition focus-within:ring-2 focus-within:ring-rose-deep">
               <input ref={fileInputRef} type="file" accept={FILE_ACCEPT} multiple hidden onChange={addFiles} />
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
                 aria-label="Attach a PDF, JPG or PNG (up to 5 MB)"
                 title="Attach a PDF, JPG or PNG (up to 5 MB)"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-violet-600 transition hover:bg-violet-50"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-lavender-deep transition hover:bg-lavender-soft"
               >
                 <ClipIcon className="h-5 w-5" />
               </button>
@@ -537,19 +537,19 @@ export default function Talk() {
                 rows={1}
                 placeholder="Say it in your own words…"
                 aria-label="Message"
-                className="max-h-36 min-h-10 flex-1 resize-none bg-transparent px-2 py-2 text-base text-zinc-900 outline-none placeholder:text-zinc-400"
+                className="max-h-36 min-h-10 flex-1 resize-none bg-transparent px-2 py-2 text-base text-ink outline-none placeholder:text-ink/70"
               />
               <button
                 type="button"
                 onClick={() => void send()}
                 disabled={!canSend}
                 aria-label="Send"
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-rose-400 to-fuchsia-500 text-white shadow-sm transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-35"
+                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-linear-to-br from-rose-deep to-lavender-deep text-white shadow-sm transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-35"
               >
                 <SendIcon className="h-5 w-5" />
               </button>
             </div>
-            <p className="mt-2 flex items-center justify-center gap-1 text-[11px] text-zinc-500">
+            <p className="mt-2 flex items-center justify-center gap-1 text-[11px] text-ink/70">
               <LockIcon className="h-3 w-3" /> Your messages, files and a short cycle summary are sent to the AI. Not a diagnosis. It can make mistakes.
             </p>
           </div>
@@ -559,14 +559,14 @@ export default function Talk() {
       {brief.open && (
         <section
           aria-label="Doctor brief"
-          className="print-panel fixed inset-0 z-50 overflow-y-auto bg-white bg-linear-to-b from-rose-50 to-white text-zinc-900"
+          className="print-panel fixed inset-0 z-50 overflow-y-auto bg-white bg-linear-to-b from-rose-soft to-white text-ink"
         >
           <div className="mx-auto max-w-2xl px-5 py-6">
             <div className="no-print mb-6 flex items-center justify-between gap-3">
               <button
                 type="button"
                 onClick={closeBrief}
-                className="rounded-full bg-white px-4 py-2 text-sm text-violet-800 shadow-sm ring-1 ring-violet-200 transition hover:bg-violet-50"
+                className="rounded-full bg-white px-4 py-2 text-sm text-lavender-deep shadow-sm ring-1 ring-lavender-soft transition hover:bg-lavender-soft"
               >
                 ← Back to chat
               </button>
@@ -574,26 +574,26 @@ export default function Talk() {
                 type="button"
                 onClick={() => window.print()}
                 disabled={brief.loading || !brief.text}
-                className="rounded-full bg-linear-to-br from-rose-400 to-fuchsia-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-40"
+                className="rounded-full bg-linear-to-br from-rose-deep to-lavender-deep px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-105 disabled:cursor-not-allowed disabled:opacity-40"
               >
                 Print / Save as PDF
               </button>
             </div>
 
-            <h1 className="font-serif text-3xl text-rose-900">Doctor brief</h1>
-            <p className="mb-5 mt-1 border-b border-rose-200 pb-4 text-sm text-zinc-500">
+            <h1 className="font-serif text-3xl text-rose-deep">Doctor brief</h1>
+            <p className="mb-5 mt-1 border-b border-rose-soft pb-4 text-sm text-ink/70">
               Prepared {new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}
               {' · '}Based on my own notes and tracker. Not a diagnosis.
             </p>
 
             {brief.text && <Markdown text={brief.text} className="text-[15px] leading-relaxed" />}
             {brief.loading && (
-              <p className="no-print mt-4 flex items-center gap-2 text-sm text-violet-700" role="status">
-                <span className="h-2 w-2 animate-pulse rounded-full bg-rose-400" /> Putting your brief together…
+              <p className="no-print mt-4 flex items-center gap-2 text-sm text-lavender-deep" role="status">
+                <span className="h-2 w-2 animate-pulse rounded-full bg-rose-deep" /> Putting your brief together…
               </p>
             )}
             {brief.error && (
-              <p role="alert" className="mt-3 rounded-2xl bg-rose-50 p-4 text-sm text-rose-900 ring-1 ring-rose-200">
+              <p role="alert" className="mt-3 rounded-2xl bg-rose-soft p-4 text-sm text-rose-deep ring-1 ring-rose-soft">
                 {brief.error}
               </p>
             )}

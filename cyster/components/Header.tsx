@@ -1,6 +1,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import Logo from '@/components/Logo';
 import { useSyncExternalStore } from 'react';
 import { currentName, signOut, subscribeSession } from '@/lib/auth';
 import { wipeAll } from '@/lib/storage';
@@ -25,8 +26,8 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-10 flex items-center justify-between bg-cream/90 px-5 py-4 backdrop-blur">
-      <span className="text-lg font-semibold text-lavender-deep">Cyster</span>
-      <div className="flex items-center gap-4 text-xs text-ink/60">
+      <Logo size={24} withWordmark />
+      <div className="flex items-center gap-4 text-xs text-ink/70">
         {name && (
           <>
             <span>{name}</span>

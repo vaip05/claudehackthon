@@ -54,7 +54,7 @@ export default function Calendar({
         </button>
       </div>
 
-      <div className="mb-1 grid grid-cols-7 text-center text-xs text-ink/50">
+      <div className="mb-1 grid grid-cols-7 text-center text-xs text-ink/70">
         {WEEKDAYS.map((w, i) => (
           <div key={i}>{w}</div>
         ))}

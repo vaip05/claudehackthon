@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 import { useRouter } from 'next/navigation';
 import { useState, useSyncExternalStore, type FormEvent } from 'react';
 import { currentName, signIn, signOut, subscribeSession } from '@/lib/auth';
@@ -44,7 +45,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-1 flex-col gap-10 py-8">
       <section className="space-y-3 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-lavender-deep">Cyster</p>
+        <Logo size={64} className="justify-center" />
         <h1 className="text-3xl font-semibold leading-tight">Track it. Talk it. Tips for feeling your best.</h1>
         <p className="text-sm text-ink/70">
           A private space for periods, PMOS and endometriosis questions, and everyday tips for your body.
@@ -75,7 +76,7 @@ export default function HomePage() {
             </Link>
             <button
               onClick={() => signOut()}
-              className="text-sm text-ink/60 underline"
+              className="text-sm text-ink/70 underline"
             >
               Sign out
             </button>
@@ -111,7 +112,7 @@ export default function HomePage() {
             >
               {busy ? 'Signing in…' : 'Sign in'}
             </button>
-            <p className="text-xs text-ink/60">
+            <p className="text-xs text-ink/70">
               New here? Pick a name and PIN and we&apos;ll create your profile on this device.
             </p>
           </form>

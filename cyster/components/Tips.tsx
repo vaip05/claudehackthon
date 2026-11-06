@@ -109,7 +109,7 @@ export default function Tips() {
           <>
             <h1 className="text-xl font-semibold text-ink">You&apos;re in your {phase} phase</h1>
             <p className="mt-1 text-sm text-ink/70">{PHASE_BLURBS[phase]}</p>
-            <p className="mt-2 text-xs text-ink/60">
+            <p className="mt-2 text-xs text-ink/70">
               {picked
                 ? 'You picked this phase.'
                 : 'Estimated from your tracker.'}{' '}
@@ -135,7 +135,7 @@ export default function Tips() {
       </section>
 
       <section aria-label="Cycle phase" className="space-y-2">
-        <p className="text-xs font-medium uppercase tracking-wide text-ink/60">Phase</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-ink/70">Phase</p>
         <div role="radiogroup" aria-label="Cycle phase" className="flex flex-wrap gap-2">
           {PHASES.map((p) => {
             const active = phase === p;
@@ -159,7 +159,7 @@ export default function Tips() {
       </section>
 
       <section aria-label="Focus" className="space-y-2">
-        <p className="text-xs font-medium uppercase tracking-wide text-ink/60">Focus</p>
+        <p className="text-xs font-medium uppercase tracking-wide text-ink/70">Focus</p>
         <div
           role="radiogroup"
           aria-label="Focus"
@@ -183,12 +183,12 @@ export default function Tips() {
           })}
         </div>
         {focus === 'pmos' && (
-          <p className="text-xs text-ink/60">
+          <p className="text-xs text-ink/70">
             With PMOS, cycles are often irregular, so treat the phase as a rough guide.
           </p>
         )}
         {focus === 'endo' && (
-          <p className="text-xs text-ink/60">
+          <p className="text-xs text-ink/70">
             For endometriosis, research on food and exercise for pain is limited, so these are ideas
             to try, not treatments.
           </p>
@@ -213,7 +213,7 @@ export default function Tips() {
                     <h3 className="text-base font-semibold text-ink">{tip.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-ink/75">{tip.why}</p>
                     {tip.source && (
-                      <p className="mt-2 text-xs text-ink/60">
+                      <p className="mt-2 text-xs text-ink/70">
                         Source:{' '}
                         {SOURCE_URLS[tip.source] ? (
                           <a

@@ -80,9 +80,9 @@ export default function Markdown({ text, className = '' }: { text: string; class
         if (block.kind === 'heading') {
           const cls =
             block.level === 1
-              ? 'font-serif text-2xl text-rose-900'
+              ? 'font-serif text-2xl text-rose-deep'
               : block.level === 2
-                ? 'pt-3 font-serif text-xl text-rose-900'
+                ? 'pt-3 font-serif text-xl text-rose-deep'
                 : 'font-semibold';
           return (
             <h3 key={i} className={cls}>

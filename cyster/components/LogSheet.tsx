@@ -65,7 +65,7 @@ export default function LogSheet({ date, existing, onClose, onSaved }: Props) {
       >
         <div className="mb-4 flex items-center justify-between">
           <h3 className="font-semibold">{formatShort(date)}</h3>
-          <button onClick={onClose} className="text-sm text-ink/60">
+          <button onClick={onClose} className="text-sm text-ink/70">
             Close
           </button>
         </div>
@@ -83,7 +83,7 @@ export default function LogSheet({ date, existing, onClose, onSaved }: Props) {
         </section>
 
         <section className="mb-5">
-          <p className="mb-2 text-sm text-ink/60">Flow</p>
+          <p className="mb-2 text-sm text-ink/70">Flow</p>
           <div className="grid grid-cols-4 gap-2">
             {FLOW_OPTIONS.map((o) => (
               <button
@@ -100,7 +100,7 @@ export default function LogSheet({ date, existing, onClose, onSaved }: Props) {
         </section>
 
         <section className="mb-5">
-          <p className="mb-2 text-sm text-ink/60">Pain</p>
+          <p className="mb-2 text-sm text-ink/70">Pain</p>
           <div className="grid grid-cols-4 gap-2">
             {PAIN_OPTIONS.map((o) => (
               <button
@@ -117,7 +117,7 @@ export default function LogSheet({ date, existing, onClose, onSaved }: Props) {
         </section>
 
         <section className="mb-6">
-          <p className="mb-2 text-sm text-ink/60">Symptoms</p>
+          <p className="mb-2 text-sm text-ink/70">Symptoms</p>
           <div className="flex flex-wrap gap-2">
             {SYMPTOM_OPTIONS.map((o) => {
               const on = symptoms.includes(o.value);

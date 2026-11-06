@@ -104,7 +104,7 @@ function TrackPage() {
               ) : (
                 <div className="mt-1 text-sm text-ink/70">
                   <p>Next period ~{formatShort(next.date)}</p>
-                  <p className="text-xs text-ink/60">
+                  <p className="text-xs text-ink/70">
                     {next.earliest !== next.latest &&
                       `Likely ${formatShort(next.earliest)}–${formatShort(next.latest)} · `}
                     usually lasts about {avgPeriodLength(logs)} days
@@ -130,7 +130,7 @@ function TrackPage() {
           <p className="text-sm text-ink">
             Your log suggests {flags.map((f) => FLAG_TEXT[f]).join(', ')}. Want to talk it through?
           </p>
-          <p className="mt-2 text-xs text-ink/60">Patterns to discuss with a clinician, not a diagnosis.</p>
+          <p className="mt-2 text-xs text-ink/70">Patterns to discuss with a clinician, not a diagnosis.</p>
         </Link>
       )}
 
@@ -148,7 +148,7 @@ function TrackPage() {
         onNext={() => shift(1)}
         onSelect={setSelected}
       />
-      <p className="text-center text-xs text-ink/60">
+      <p className="text-center text-xs text-ink/70">
         Dashed = expected start · shaded = likely window · ✕ = missed
       </p>
 

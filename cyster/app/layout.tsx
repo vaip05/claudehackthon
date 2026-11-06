@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cyster",
+  title: { default: "Cyster", template: "%s · Cyster" },
   description: "A private cycle tracker and guide for PMOS and endometriosis.",
 };
 
