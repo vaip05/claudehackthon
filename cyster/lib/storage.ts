@@ -1,6 +1,8 @@
 import type { DayLog, Focus } from './types';
 import type { ChatMode } from './chat';
 
+import { getSessionId } from './auth';
+
 const PREFIX = 'cyster.';
 const KEYS = {
   logs: 'cyster.logs',
@@ -10,6 +12,12 @@ const KEYS = {
 
 /** Fired on `window` after wipeAll() so mounted components can reset their in-memory state. */
 export const WIPE_EVENT = 'cyster:wipe';
+
+/** Keeps each signed-in profile's data under its own key, e.g. cyster.logs.<id>. */
+function scoped(base: string): string {
+  const id = getSessionId();
+  return id ? `.` : base;
+}
 
 function read<T>(key: string, fallback: T): T {
   if (typeof window === 'undefined') return fallback;
@@ -31,26 +39,26 @@ function write(key: string, value: unknown) {
 }
 
 export function getLogs(): DayLog[] {
-  return read<DayLog[]>(KEYS.logs, []);
+  return read<DayLog[]>(scoped(KEYS.logs), []);
 }
 
 export function setLogs(logs: DayLog[]) {
-  write(KEYS.logs, [...logs].sort((a, b) => a.date.localeCompare(b.date)));
+  write(scoped(KEYS.logs), [...logs].sort((a, b) => a.date.localeCompare(b.date)));
 }
 
 export function saveLog(log: DayLog) {
   const logs = getLogs().filter((l) => l.date !== log.date);
   logs.push(log);
   logs.sort((a, b) => a.date.localeCompare(b.date));
-  write(KEYS.logs, logs);
+  write(scoped(KEYS.logs), logs);
 }
 
 export function getFocus(): Focus {
-  return read<Focus>(KEYS.focus, 'general');
+  return read<Focus>(scoped(KEYS.focus), 'general');
 }
 
 export function setFocus(focus: Focus) {
-  write(KEYS.focus, focus);
+  write(scoped(KEYS.focus), focus);
 }
 
 /** Persisted chat thread. Attachment bytes are never stored, only their names. */
@@ -64,11 +72,11 @@ export type StoredMessage = {
 export type StoredChat = { messages: StoredMessage[]; mode: ChatMode };
 
 export function getChat(): StoredChat {
-  return read<StoredChat>(KEYS.chat, { messages: [], mode: 'before' });
+  return read<StoredChat>(scoped(KEYS.chat), { messages: [], mode: 'before' });
 }
 
 export function saveChat(chat: StoredChat) {
-  write(KEYS.chat, chat);
+  write(scoped(KEYS.chat), chat);
 }
 
 export function wipeAll() {
