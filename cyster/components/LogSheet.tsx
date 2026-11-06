@@ -56,12 +56,12 @@ export default function LogSheet({ date, existing, onClose, onSaved }: Props) {
   };
 
   return (
-    <div className="fixed inset-0 z-20 flex items-end bg-ink/30" onClick={onClose}>
+    <div className="fixed inset-0 z-20 flex items-end bg-ink/30 md:items-center" onClick={onClose}>
       <div
         role="dialog"
         aria-label={`Log for ${date}`}
         onClick={(e) => e.stopPropagation()}
-        className="mx-auto max-h-[85vh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white p-6 shadow-xl"
+        className="mx-auto max-h-[85vh] w-full max-w-md overflow-y-auto rounded-t-3xl bg-white p-6 shadow-xl md:rounded-3xl"
       >
         <div className="mb-4 flex items-center justify-between">
           <h3 className="font-semibold">{formatShort(date)}</h3>

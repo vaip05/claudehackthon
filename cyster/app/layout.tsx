@@ -28,14 +28,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
-        {/* --tabbar-h lets the Talk composer sit above the fixed tab bar; --header-h lets Talk's sticky header sit under the app header (60px) */}
-        <div
-          className="mx-auto flex min-h-screen w-full max-w-md flex-col"
-          style={{ "--tabbar-h": "3.5rem", "--header-h": "3.75rem" } as React.CSSProperties}
-        >
+        {/*
+          Full-width shell. Each page sets its own width (see PageContainer); Talk runs edge to edge.
+          --header-h is the fixed app header height, so Talk's sticky header can sit under it.
+          --tabbar-h lifts Talk's composer above the bottom tab bar, which only exists below md.
+        */}
+        <div className="flex min-h-screen w-full flex-col [--header-h:3.75rem] [--tabbar-h:3.5rem] md:[--tabbar-h:0px]">
           <Header />
           <PrivacyBanner />
-          <main className="flex flex-1 flex-col px-5 pb-6 pt-2">{children}</main>
+          <main className="flex flex-1 flex-col">{children}</main>
           <Disclaimer />
         </div>
         <TabBar />

@@ -43,7 +43,7 @@ export default function Calendar({
   const title = first.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
 
   return (
-    <div className="rounded-3xl bg-white p-4 shadow-sm">
+    <div className="rounded-3xl bg-white p-4 shadow-sm md:p-6">
       <div className="mb-3 flex items-center justify-between">
         <button onClick={onPrev} aria-label="Previous month" className="px-3 py-1 text-xl text-ink/70">
           ‹
@@ -74,7 +74,7 @@ export default function Calendar({
           const isMissed = !!log?.missed;
 
           const classes = [
-            'relative aspect-square rounded-xl text-sm',
+            'relative aspect-square rounded-xl text-sm md:aspect-[5/4] md:text-base',
             hasFlow ? 'bg-rose-soft font-semibold text-rose-deep' : 'hover:bg-lavender-soft/60',
             isWindow && !hasFlow ? 'bg-lavender-soft/50' : '',
             isToday ? 'ring-2 ring-lavender-deep' : '',

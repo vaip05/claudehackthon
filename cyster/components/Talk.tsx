@@ -378,7 +378,7 @@ export default function Talk() {
         />
 
         <header className="sticky top-[var(--header-h,0px)] z-10 border-b border-white/70 bg-white/60 backdrop-blur-md">
-          <div className="mx-auto flex max-w-2xl items-center justify-between gap-3 px-4 pt-3">
+          <div className="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 pt-3">
             <div>
               <h1 className="font-serif text-2xl leading-tight text-rose-900">Talk it through</h1>
               <p className="mt-0.5 flex items-center gap-1 text-xs text-violet-700">
@@ -394,7 +394,7 @@ export default function Talk() {
               <DocIcon className="h-4 w-4" /> Doctor brief
             </button>
           </div>
-          <div className="mx-auto max-w-2xl px-4 pb-3 pt-2.5">
+          <div className="mx-auto max-w-3xl px-4 pb-3 pt-2.5">
             <button
               type="button"
               role="switch"
@@ -421,7 +421,7 @@ export default function Talk() {
           </div>
         </header>
 
-        <main className="relative mx-auto flex w-full max-w-2xl flex-1 flex-col gap-4 px-4 py-6" aria-live="polite">
+        <main className="relative mx-auto flex w-full max-w-3xl flex-1 flex-col gap-4 px-4 py-6" aria-live="polite">
           {hydrated && messages.length === 0 && (
             <div className="msg-in flex flex-col items-center px-2 pt-4 text-center">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-br from-rose-300 to-violet-300 text-white shadow-lg shadow-rose-200">
@@ -497,7 +497,7 @@ export default function Talk() {
 
         {/* Set --tabbar-h on a parent (e.g. the nav height) to lift the composer above a fixed tab bar. */}
         <div className="sticky bottom-[var(--tabbar-h,0px)] z-10 bg-linear-to-t from-violet-50 via-violet-50 to-violet-50/0 px-4 pb-4 pt-8">
-          <div className="mx-auto max-w-2xl">
+          <div className="mx-auto max-w-3xl">
             {(pending.length > 0 || fileError) && (
               <div className="mb-2 space-y-1.5 px-1">
                 {pending.length > 0 && (

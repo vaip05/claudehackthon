@@ -17,7 +17,7 @@ export const WIPE_EVENT = 'cyster:wipe';
 /** Keeps each signed-in profile's data under its own key, e.g. cyster.logs.<id>. */
 function scoped(base: string): string {
   const id = getSessionId();
-  return id ? `.` : base;
+  return id ? `${base}.${id}` : base;
 }
 
 function read<T>(key: string, fallback: T): T {

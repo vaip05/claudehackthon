@@ -14,7 +14,10 @@ export default function TabBar() {
   if (pathname === '/') return null; // homepage has its own navigation
 
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-10 border-t border-lavender-soft bg-white/95 backdrop-blur">
+    <nav
+      aria-label="Tabs"
+      className="fixed inset-x-0 bottom-0 z-10 border-t border-lavender-soft bg-white/95 backdrop-blur md:hidden"
+    >
       <ul className="mx-auto flex max-w-md">
         {TABS.map((tab) => {
           const active = pathname.startsWith(tab.href);

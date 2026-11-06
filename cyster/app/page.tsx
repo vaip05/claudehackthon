@@ -1,9 +1,6 @@
-'use client';
-
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useState, useSyncExternalStore, type FormEvent } from 'react';
-import { currentName, signIn, signOut, subscribeSession } from '@/lib/auth';
+import AuthCard from '@/components/AuthCard';
+import PageContainer from '@/components/PageContainer';
 
 const PILLARS = [
   {
@@ -24,99 +21,38 @@ const PILLARS = [
 ];
 
 export default function HomePage() {
-  const router = useRouter();
-  const name = useSyncExternalStore(subscribeSession, currentName, () => null);
-  const [nameInput, setNameInput] = useState('');
-  const [pin, setPin] = useState('');
-  const [error, setError] = useState<string | null>(null);
-  const [busy, setBusy] = useState(false);
-
-  const submit = async (e: FormEvent) => {
-    e.preventDefault();
-    setBusy(true);
-    setError(null);
-    const result = await signIn(nameInput, pin);
-    setBusy(false);
-    if (result.ok) router.push('/track');
-    else setError(result.error);
-  };
-
   return (
-    <div className="flex flex-1 flex-col gap-10 py-8">
-      <section className="space-y-3 text-center">
-        <p className="text-sm font-medium uppercase tracking-widest text-lavender-deep">Cyster</p>
-        <h1 className="text-3xl font-semibold leading-tight">Track it. Talk it. Tips for feeling your best.</h1>
-        <p className="text-sm text-ink/70">
-          A private space for periods, PMOS and endometriosis questions, and everyday tips for your body.
-        </p>
-      </section>
-
-      <section className="grid gap-4">
-        {PILLARS.map((p) => (
-          <Link
-            key={p.title}
-            href={p.href}
-            className="rounded-3xl bg-white p-5 shadow-sm transition hover:bg-rose-soft/40"
-          >
-            <h2 className="font-semibold text-rose-deep">{p.title}</h2>
-            <p className="mt-1 text-sm text-ink/70">{p.body}</p>
-          </Link>
-        ))}
-      </section>
-
-      <section className="rounded-3xl bg-lavender-soft/50 p-6">
-        {name ? (
-          <div className="space-y-3 text-center">
-            <p>
-              Welcome back, <span className="font-semibold">{name}</span>
+    <PageContainer>
+      <div className="flex flex-1 flex-col gap-6 py-2 md:gap-12 md:py-6 lg:gap-16">
+        {/* Phone: stacked. Desktop: pitch on the left, sign-in on the right. */}
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <section className="space-y-1 text-center lg:space-y-4 lg:text-left">
+            <h1 className="text-xl font-semibold leading-tight md:text-4xl lg:text-5xl">
+              Track it. Talk it. Tips for feeling your best.
+            </h1>
+            <p className="text-sm text-ink/70 md:text-lg lg:max-w-lg">
+              A private space for periods, PMOS and endometriosis questions, and everyday tips for your body.
             </p>
-            <Link href="/track" className="block rounded-2xl bg-rose-deep py-3 font-semibold text-white">
-              Go to Track
-            </Link>
-            <button
-              onClick={() => signOut()}
-              className="text-sm text-ink/60 underline"
-            >
-              Sign out
-            </button>
+          </section>
+
+          <div className="mx-auto w-full max-w-lg lg:mx-0 lg:justify-self-end">
+            <AuthCard />
           </div>
-        ) : (
-          <form onSubmit={submit} className="space-y-3">
-            <h2 className="font-semibold">Sign in</h2>
-            <input
-              value={nameInput}
-              onChange={(e) => setNameInput(e.target.value)}
-              placeholder="Name or nickname"
-              autoComplete="username"
-              className="w-full rounded-xl border border-lavender-soft bg-white px-4 py-3"
-            />
-            <input
-              value={pin}
-              onChange={(e) => setPin(e.target.value.replace(/\D/g, '').slice(0, 4))}
-              placeholder="4-digit PIN"
-              type="password"
-              inputMode="numeric"
-              autoComplete="current-password"
-              className="w-full rounded-xl border border-lavender-soft bg-white px-4 py-3 tracking-[0.5em]"
-            />
-            {error && (
-              <p role="alert" className="text-sm text-rose-deep">
-                {error}
-              </p>
-            )}
-            <button
-              type="submit"
-              disabled={busy}
-              className="w-full rounded-2xl bg-rose-deep py-3 font-semibold text-white disabled:opacity-60"
+        </div>
+
+        <section className="grid gap-4 md:grid-cols-3 md:gap-6">
+          {PILLARS.map((p) => (
+            <Link
+              key={p.title}
+              href={p.href}
+              className="rounded-3xl bg-white p-5 shadow-sm transition hover:bg-rose-soft/40 md:p-7"
             >
-              {busy ? 'Signing in…' : 'Sign in'}
-            </button>
-            <p className="text-xs text-ink/60">
-              New here? Pick a name and PIN and we&apos;ll create your profile on this device.
-            </p>
-          </form>
-        )}
-      </section>
-    </div>
+              <h2 className="font-semibold text-rose-deep md:text-xl">{p.title}</h2>
+              <p className="mt-1 text-sm text-ink/70 md:mt-2 md:text-base">{p.body}</p>
+            </Link>
+          ))}
+        </section>
+      </div>
+    </PageContainer>
   );
 }

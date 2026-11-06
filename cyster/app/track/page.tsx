@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Calendar from '@/components/Calendar';
-import RequireSignIn from '@/components/RequireSignIn';
 import LogSheet from '@/components/LogSheet';
+import PageContainer from '@/components/PageContainer';
 import { getLogs, saveLog, setLogs } from '@/lib/storage';
 import {
   avgPeriodLength,
@@ -81,8 +81,10 @@ function TrackPage() {
   );
 
   return (
-    <div className="space-y-5">
-      <section className="rounded-3xl bg-lavender-soft/60 p-5">
+    // Desktop: your summary on the left, a bigger calendar on the right.
+    <div className="space-y-5 lg:grid lg:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] lg:items-start lg:gap-8 lg:space-y-0">
+      <div className="space-y-5">
+      <section className="rounded-3xl bg-lavender-soft/60 p-5 md:p-8">
         {cycle ? (
           <>
             <p className="text-lg font-semibold">
@@ -133,7 +135,9 @@ function TrackPage() {
           <p className="mt-2 text-xs text-ink/60">Patterns to discuss with a clinician, not a diagnosis.</p>
         </Link>
       )}
+      </div>
 
+      <div className="space-y-5">
       <Calendar
         year={view.y}
         month={view.m}
@@ -151,6 +155,7 @@ function TrackPage() {
       <p className="text-center text-xs text-ink/60">
         Dashed = expected start · shaded = likely window · ✕ = missed
       </p>
+      </div>
 
       {selected && (
         <LogSheet
@@ -167,8 +172,8 @@ function TrackPage() {
 
 export default function TrackPageGuarded() {
   return (
-    <RequireSignIn>
+    <PageContainer>
       <TrackPage />
-    </RequireSignIn>
+    </PageContainer>
   );
 }

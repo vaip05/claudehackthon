@@ -31,10 +31,11 @@ export default function PrivacyBanner() {
   };
 
   return (
+    <div className="no-print mx-auto w-full max-w-7xl px-5 md:px-8">
     <section
       role="region"
       aria-label="Privacy"
-      className="no-print mx-5 mb-2 mt-1 rounded-2xl border border-lavender-soft bg-lavender-soft/50 p-4"
+      className="mb-2 mt-1 rounded-2xl border border-lavender-soft bg-lavender-soft/50 p-4 md:mt-0 md:p-5"
     >
       <div className="flex items-start gap-3">
         <svg
@@ -53,9 +54,9 @@ export default function PrivacyBanner() {
         <div className="flex-1 text-sm leading-relaxed text-ink/80">
           <p className="font-semibold text-ink">Your privacy</p>
           <p className="mt-1">
-            Your cycle log stays on this device. When you chat, your messages, any files you attach
-            and a short summary of your log are sent to an AI service to write replies. There are no
-            accounts and no database.
+            Your cycle log and account stay on this device. When you chat, your messages, any files
+            you attach and a short summary of your log are sent to an AI service to write replies.
+            We have no server database, so we never receive your email or password.
           </p>
           <button
             onClick={dismiss}
@@ -66,5 +67,6 @@ export default function PrivacyBanner() {
         </div>
       </div>
     </section>
+    </div>
   );
 }

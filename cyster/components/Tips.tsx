@@ -103,11 +103,13 @@ export default function Tips() {
   };
 
   return (
-    <div className="space-y-5">
-      <section className="rounded-3xl bg-lavender-soft/60 p-5">
+    <div className="space-y-5 md:space-y-8">
+      {/* Desktop: the phase summary on the left, the phase and focus pickers on the right. */}
+      <div className="space-y-5 lg:grid lg:grid-cols-2 lg:items-start lg:gap-8 lg:space-y-0">
+      <section className="rounded-3xl bg-lavender-soft/60 p-5 md:p-8">
         {phase ? (
           <>
-            <h1 className="text-xl font-semibold text-ink">You&apos;re in your {phase} phase</h1>
+            <h1 className="text-xl font-semibold text-ink md:text-3xl">You&apos;re in your {phase} phase</h1>
             <p className="mt-1 text-sm text-ink/70">{PHASE_BLURBS[phase]}</p>
             <p className="mt-2 text-xs text-ink/60">
               {picked
@@ -122,10 +124,10 @@ export default function Tips() {
           </>
         ) : (
           <>
-            <h1 className="text-xl font-semibold text-ink">Where are you in your cycle?</h1>
+            <h1 className="text-xl font-semibold text-ink md:text-3xl">Where are you in your cycle?</h1>
             <p className="mt-1 text-sm text-ink/70">
               Pick a phase below to see tips. Or log the first day of your period in{' '}
-              <Link href="/" className="text-lavender-deep underline">
+              <Link href="/track" className="text-lavender-deep underline">
                 Track
               </Link>{' '}
               and we&apos;ll work it out for you.
@@ -134,6 +136,7 @@ export default function Tips() {
         )}
       </section>
 
+      <div className="space-y-5">
       <section aria-label="Cycle phase" className="space-y-2">
         <p className="text-xs font-medium uppercase tracking-wide text-ink/60">Phase</p>
         <div role="radiogroup" aria-label="Cycle phase" className="flex flex-wrap gap-2">
@@ -194,7 +197,11 @@ export default function Tips() {
           </p>
         )}
       </section>
+      </div>
+      </div>
 
+      {/* Desktop: Eat, Move and Feel sit side by side as three columns. */}
+      <div className="space-y-5 lg:grid lg:grid-cols-3 lg:items-start lg:gap-8 lg:space-y-0">
       {phase &&
         CATEGORIES.map((category) => {
           const group = tips.filter((t) => t.category === category);
@@ -202,14 +209,14 @@ export default function Tips() {
           return (
             <section key={category} aria-label={category} className="space-y-3">
               <h2
-                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold ${CATEGORY_STYLE[category].chip}`}
+                className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold md:text-sm ${CATEGORY_STYLE[category].chip}`}
               >
                 <CategoryIcon category={category} />
                 {CATEGORY_STYLE[category].heading}
               </h2>
               <ul className="space-y-3">
                 {group.map((tip) => (
-                  <li key={tip.title} className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-lavender-soft">
+                  <li key={tip.title} className="rounded-2xl bg-white p-4 shadow-sm ring-1 ring-lavender-soft md:p-5">
                     <h3 className="text-base font-semibold text-ink">{tip.title}</h3>
                     <p className="mt-1 text-sm leading-relaxed text-ink/75">{tip.why}</p>
                     {tip.source && (
@@ -241,6 +248,7 @@ export default function Tips() {
             </section>
           );
         })}
+      </div>
     </div>
   );
 }
